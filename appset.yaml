@@ -37,3 +37,14 @@ spec:
         example.from.values: "{{ values.value1 }}"
         # The plugin determines what else it produces.
         example.from.plugin.output: "{{ something.from.the.plugin }}"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/OpenGuidou/simple-configmap.git
+        path: .
+        targetRevision: HEAD
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: not-argo-ns
+      syncPolicy:
+        automated: {}
